@@ -42,7 +42,9 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class user {
-
-
-}
+class user (
+  $users = {},
+)
+  {
+    create_resources('user::create', $users)
+  }
