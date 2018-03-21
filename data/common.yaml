@@ -3,5 +3,5 @@ user::users:
   kcoakley:
     ensure: present
     uid: 2018
-    gid: 2018
+    managehome: True
     comment: Kevin Coakley
