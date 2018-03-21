@@ -1,4 +1,4 @@
-# Class: user
+# Class: user::ssh_authorized_key
 # ===========================
 #
 # Full description of class user here.
@@ -42,11 +42,26 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class user (
-  $users               = {},
-  $ssh_authorized_keys = {},
-)
-  {
-    create_resources('user::create', $users)
-    create_resources('user::ssh_authorized_key', $ssh_authorized_keys)
+define user::ssh_authorized_key (
+  $ensure   = undef,
+  $key      = undef,
+  $options  = undef,
+  $provider = undef,
+  $target   = undef,
+  $type     = 'ssh-rsa',
+  $user     = $title,
+) {
+
+  realize( Ssh_Authorized_Key[$title] )
+
+  @ssh_authorized_key { $title:
+    ensure   => $ensure,
+    key      => $key,
+    options  => $options,
+    provider => $provider,
+    target   => $target,
+    type     => $type,
+    user     => $user,
+    require  => User[$user],
   }
+}
