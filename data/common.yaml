@@ -1,0 +1,7 @@
+---
+user::users:
+  kcoakley:
+    ensure: present
+    uid: 2018
+    gid: 2018
+    comment: Kevin Coakley
