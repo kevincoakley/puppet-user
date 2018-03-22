@@ -1,0 +1,10 @@
+---
+require: rubocop-rspec
+Metrics/LineLength:
+  Include:
+  - "spec/classes/init_spec.rb"
+  Max: 400
+RSpec/DescribeClass:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
