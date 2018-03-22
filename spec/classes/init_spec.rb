@@ -4,7 +4,7 @@ describe 'user' do
   it { is_expected.to compile }
   it { is_expected.to compile.with_all_deps }
 
-  describe 'user::create' do
+  describe 'user::user' do
     it do
       is_expected.to contain_user('tester').with(
         ensure: 'present',

@@ -1,4 +1,4 @@
-# Class: user::create
+# Class: user::user
 # ===========================
 #
 # Create Users using the user resource
@@ -9,7 +9,7 @@
 # See https://puppet.com/docs/puppet/5.5/types/user.html
 #
 #
-define user::create (
+define user::user (
   $ensure               = undef,
   $allowdupe            = undef,
   $attribute_membership = undef,

@@ -9,6 +9,6 @@ class user (
   $ssh_authorized_keys = {},
 )
   {
-    create_resources('user::create', $users)
+    create_resources('user::user', $users)
     create_resources('user::ssh_authorized_key', $ssh_authorized_keys)
   }
